@@ -1,0 +1,6 @@
+string institute
+string name
+string course
+---
+bool success
+uint32 courseid

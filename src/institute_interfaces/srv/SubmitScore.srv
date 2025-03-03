@@ -1,0 +1,7 @@
+string name
+uint32 studentid
+string content
+uint32 no
+---
+bool success
+uint32 score

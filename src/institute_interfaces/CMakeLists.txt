@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(teaching_office)
+project(institute_interfaces)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -7,16 +7,18 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
-find_package(institute_interfaces REQUIRED)
+# uncomment the following section in order to fill in
+# further dependencies manually.
+# find_package(<dependency> REQUIRED)
 
-add_executable(wangwu_node src/wangwu.cpp)
-ament_target_dependencies(wangwu_node rclcpp institute_interfaces)
+find_package(rosidl_default_generators REQUIRED)
 
-install(TARGETS
-  wangwu_node
-  DESTINATION lib/${PROJECT_NAME}
-)
+#添加消息文件和依赖
+rosidl_generate_interfaces(${PROJECT_NAME}
+  #---srv---
+  "srv/CourseApply.srv"
+  "srv/SubmitScore.srv"
+ )
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

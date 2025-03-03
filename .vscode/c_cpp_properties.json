@@ -9,7 +9,8 @@
         "/opt/ros/humble/include/**",
         "/home/zl/Course/Course2/university_ws/src/institute_mechanical/include/**",
         "/home/zl/Course/Course2/university_ws/src/teaching_office/include/**",
-        "/usr/include/**"
+        "/usr/include/**",
+        "/home/zl/Course/Course2/university_ws/install/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",
