@@ -12,9 +12,10 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
 
 add_executable(lisi_node src/lisi.cpp)
-ament_target_dependencies(lisi_node rclcpp)
+ament_target_dependencies(lisi_node rclcpp std_msgs)
 
 install(TARGETS
   lisi_node
